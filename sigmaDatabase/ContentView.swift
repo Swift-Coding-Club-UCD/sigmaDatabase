@@ -9,15 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                Text("Hello World")
+                    .font(.title)
+                    .padding()
+                
+                // Add your login form here
+            }
+            .navigationTitle("Firebase Auth")
         }
-        .padding()
     }
 }
+
 
 #Preview {
     ContentView()
