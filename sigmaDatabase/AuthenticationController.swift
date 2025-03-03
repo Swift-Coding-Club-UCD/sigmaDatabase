@@ -1,5 +1,5 @@
 //
-//  AuthViewModel.swift
+//  AuthenticationController.swift
 //  sigmaDatabase
 //
 //  Created by Mark Le on 2/28/25.
@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-class AuthViewModel: ObservableObject {
+class AuthenticationController: ObservableObject {
     @Published var isLoggedIn = false
     @Published var user: User?
     
