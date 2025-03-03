@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BE1D136C2D729E3200BEA386 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = BE1D136B2D729E3200BEA386 /* FirebaseCore */; };
+		BE1D136E2D729F7A00BEA386 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BE1D136D2D729F7A00BEA386 /* FirebaseAuth */; };
+		BE1D137E2D7514C700BEA386 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BE1D137D2D7514C700BEA386 /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		BE1D134F2D6FAC3E00BEA386 /* sigmaDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sigmaDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +29,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1D136C2D729E3200BEA386 /* FirebaseCore in Frameworks */,
+				BE1D136E2D729F7A00BEA386 /* FirebaseAuth in Frameworks */,
+				BE1D137E2D7514C700BEA386 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +74,9 @@
 			);
 			name = sigmaDatabase;
 			packageProductDependencies = (
+				BE1D136B2D729E3200BEA386 /* FirebaseCore */,
+				BE1D136D2D729F7A00BEA386 /* FirebaseAuth */,
+				BE1D137D2D7514C700BEA386 /* FirebaseFirestore */,
 			);
 			productName = sigmaDatabase;
 			productReference = BE1D134F2D6FAC3E00BEA386 /* sigmaDatabase.app */;
@@ -353,6 +365,24 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE1D136B2D729E3200BEA386 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE1D13632D6FB4C300BEA386 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		BE1D136D2D729F7A00BEA386 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE1D13632D6FB4C300BEA386 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BE1D137D2D7514C700BEA386 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE1D13632D6FB4C300BEA386 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BE1D13472D6FAC3E00BEA386 /* Project object */;
 }

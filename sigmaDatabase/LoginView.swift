@@ -8,30 +8,48 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
     @State private var email = ""
     @State private var password = ""
+    @State private var isSignUp = false
     
     var body: some View {
-        VStack {
-            TextField("Email", text: $email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            SecureField("Password", text: $password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            Button(action: {
-                // Login action will go here
-            }) {
-                Text("Login")
-                    .foregroundColor(.white)
-                    .frame(width: 200, height: 50)
-                    .background(Color.blue)
-                    .cornerRadius(10)
+        NavigationView {
+            VStack(spacing: 20) {
+                TextField("Email", text: $email)
+                    .autocapitalization(.none)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                SecureField("Password", text: $password)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                
+                Button(action: {
+                    if isSignUp {
+                        authViewModel.signUp(email: email, password: password)
+                    } else {
+                        authViewModel.signIn(email: email, password: password)
+                    }
+                }) {
+                    Text(isSignUp ? "Sign Up" : "Login")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                
+                Button(action: {
+                    isSignUp.toggle()
+                }) {
+                    Text(isSignUp ? "Already have an account? Login" : "Don't have an account? Sign Up")
+                }
             }
+            .padding()
+            .navigationTitle(isSignUp ? "Sign Up" : "Login")
         }
-        .padding()
     }
 }
 
